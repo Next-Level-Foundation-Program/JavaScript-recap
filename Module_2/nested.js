@@ -10,7 +10,7 @@ let user = {
 
 // console.log(user["address"]["zipcode"]);
 
-let entries = Object.entries(user);
+let entries = Object.entries(user); // to convert object into array of arrays
 
 // how to read properties from array of arrays [ [], [], []]
 console.log(entries[2][1]["country"]);

@@ -16,7 +16,7 @@ name.shift(); // remove element from the beginning of the array
 let newName = name.slice(1, 4);
 
 //splice --> add or remove elements from an array
-name.splice(3, 0, "Aziz");
+name.splice(3, 0, "Aziz"); // splice(index, how many elements to remove, new element to add)
 
 console.log(name);
 console.log(newName);

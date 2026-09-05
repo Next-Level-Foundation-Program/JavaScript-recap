@@ -3,6 +3,7 @@
 // process.argv[2] is the first argument
 // ... and so on
 
+// to get the command line arguments, we can use process.argv array
 const weight = process.argv[2];
 const height = process.argv[3];
 // console.log(weight, height); 
