@@ -23,5 +23,10 @@ let newFruits2 = fruits.map(fruit => fruit.toUpperCase());
 console.log(newFruits2, "\n", fruits);
 
 
+// filter gives a new array with all elements that pass the condition provided in the callback function.
 let customFruits = fruits.filter(fruit => fruit.length > 5);
-console.log(customFruits);
+console.log(customFruits); // Output: ["banana", "orange"]
+
+// find gives only the first element that pass the condition
+let customFruit = fruits.find((fruit) => fruit.length > 5);
+console.log(customFruit); // Output: banana
