@@ -13,7 +13,7 @@ function render() {
 
         let span = document.createElement("span");
         span.classList.add("task-text"); // Add a class for styling
-        span.textContent = task.text;
+        span.textContent =`task: ${task.text} Completed: ${task.completed}`;
 
         let btnWrapper = document.createElement("div");
         btnWrapper.classList.add("task-buttons"); // Add a class for styling
@@ -21,8 +21,16 @@ function render() {
         let completeBtn = document.createElement("button");
         completeBtn.textContent = "✔";
 
+        completeBtn.addEventListener("click", ()=> {
+            completedTask(task.id)
+        })
+
         let deleteBtn = document.createElement("button");
         deleteBtn.textContent = "❌";
+        deleteBtn.addEventListener("click", () =>{
+            deleteTask(task.id)
+
+        });
 
         btnWrapper.appendChild(completeBtn);
         btnWrapper.appendChild(deleteBtn);
@@ -54,3 +62,14 @@ function addTask() {
 };
 
 addBtn.addEventListener("click", addTask);
+
+function completedTask(id) {
+    let task = tasks.find((task) => task.id == id);
+    task.completed = !task.completed;
+    render()
+}
+
+function deleteTask(id){
+   tasks = tasks.filter((task) => task.id != id);
+    render();
+}
